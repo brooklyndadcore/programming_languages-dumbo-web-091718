@@ -7,12 +7,8 @@ def reformat_languages(languages)
       ooh = languages[:oo].has_key?(el)
       fun = languages[:functional].has_key?(el)
 
-      if ooh && fun 
-        style = style_arr
-      else
-        style = [k]
-      end
-
+      ooh && fun ? style = style_arr : style = [k]
+ 
       hash_arr << {el => {:type => v[el][:type], :style => style}}
 
     end
